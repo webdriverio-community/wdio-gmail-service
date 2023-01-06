@@ -26,7 +26,7 @@ export default class GmailService implements Services.ServiceInstance {
         const max_wait_time_sec = this._timeoutSec
         browser.addCommand('checkInbox', async function ({ from, to, subject, includeBody = true, before, after, includeAttachments = false, label = 'INBOX' } : CheckInboxOptions) {
             if (!from && !to && !subject) { 
-                throw new Error('At least one of `from`, `to` or `subject` need to be provided to checkInbox');
+                throw new Error('At least one of `from`, `to` or `subject` need to be provided to checkInbox')
             }
             return await check_inbox(resolve(credentials_json_path), resolve(token_json_path), { from, to, subject, include_body: includeBody, before, after, include_attachments: includeAttachments, label, wait_time_sec, max_wait_time_sec })
         })

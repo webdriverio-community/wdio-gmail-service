@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "A WebdriverIO plugin to fetch e-mails from Google Mail",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "run-s test:*",
     "build": "run-s clean compile copy",
     "clean": "rimraf ./build",
     "compile": "tsc --build tsconfig.json",
