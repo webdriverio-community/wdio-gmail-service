@@ -7,8 +7,8 @@ A WebdriverIO plugin to fetch e-mails from Google Mail. Wraps [Gmail Tester](htt
 
 You'll need to follow the instructions at [Gmail Tester](https://github.com/levz0r/gmail-tester) to create the `credentials.json` (the OAuth2 Authentication file) and `token.json` (the OAuth2 token). 
 
+### Configuration
 
-### Configuration  
 // wdio.conf.js
 ```js
 const { join } = require('path')
