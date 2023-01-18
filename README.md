@@ -30,40 +30,36 @@ export.config = {
 ## Service Options
 
 ### credentialsJsonPath  
-Path to credentials JSON file
+Path to credentials JSON file.
 
-Example: join(process.cwd(), './credentials.json')
+Type: `string`
 
-Type: string
-
-Required: true
+Required: `true`
 
 ### tokenJsonPath
-Path to token JSON file
+Path to token JSON file.
 
-Example: join(process.cwd(), './token.json')
+Type: `string`
 
-Type: string
-
-Required: true
+Required: `true`
 
 ### intervalSec
-Interval between gmail inbox checks
+Interval between gmail inbox checks.
 
-Type: number
+Type: `number`
 
-Default: 10
+Default: `10`
 
-Required: false
+Required: `false`
 
 ### timeoutSec
-The maximum time to wait for finding the email for the given filters
+The maximum time to wait for finding the email for the given filters.
 
-Type: number
+Type: `number`
 
-Default: 60
+Default: `60`
 
-Required: false
+Required: `false`
 
 
 ## Writing tests
@@ -72,12 +68,8 @@ Required: false
 describe('Example', () => {
     it('Should check email', () => {
         // perform some actions that will send an email to setup gmail account
-
         const emails = await browser.checkInbox({ from: 'AccountSupport@ubi.com', subject: 'Ubisoft Password Change Request' });
-
         expect(emails[0].body.html).toContain('https://account-uplay.ubi.com/en-GB/action/change-password?genomeid=')
-
-
     })
 })
 ```
