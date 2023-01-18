@@ -9,22 +9,23 @@ You'll need to follow the instructions at [Gmail Tester](https://github.com/levz
 
 ### Configuration
 
-// wdio.conf.js
+Add the service by adding `gmail` to the service list, e.g.:
+
 ```js
-const { join } = require('path')
+// wdio.conf.js
+import path from 'path'
 
 export.config = {
     // ...
-    services: [["gmail-service", {
-        credentialsJsonPath: join(process.cwd(), './credentials.json'),
+    services: [['gmail', {
+        credentialsJsonPath: path.join(process.cwd(), './credentials.json'),
         tokenJsonPath: join(process.cwd(), './token.json'),
-        intervalSec: 10
+        intervalSec: 10,
         timeoutSec: 60
     }]]
     // ...
 };
 ```
-
 
 ## Service Options
 
