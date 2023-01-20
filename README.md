@@ -1,5 +1,24 @@
-# wdio-gmail-service
-A WebdriverIO plugin to fetch e-mails from Google Mail. Wraps [Gmail Tester](https://github.com/levz0r/gmail-tester)
+# WebdriverIO Gmail Service
+
+A WebdriverIO plugin to fetch e-mails from Google Mail using [Gmail Tester](https://github.com/levz0r/gmail-tester).
+
+## Installation
+
+The easiest way is to keep `wdio-gmail-service` as a `devDependency` in your package.json.
+
+```json
+{
+  "devDependencies": {
+    "wdio-gmail-service": "^1.0.0"
+  }
+}
+```
+
+You can simply do it by:
+
+```sh
+npm install wdio-gmail-service --save-dev
+```
 
 ## Usage
 
@@ -88,3 +107,7 @@ The command parameters require at least one of `from`, `to`, or `subject`:
 ```before```: Date. Filter messages received before the specified date.
 ```after```: Date. Filter messages received after the specified date.
 ```label```: String. The default label is 'INBOX', but can be changed to 'SPAM', 'TRASH' or a custom label. For a full list of built-in labels, see https://developers.google.com/gmail/api/guides/labels?hl=en
+
+---
+
+For more information on WebdriverIO see the [homepage](https://webdriver.io).
