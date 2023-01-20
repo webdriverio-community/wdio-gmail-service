@@ -99,13 +99,13 @@ describe('Example', () => {
 
 The command parameters require at least one of `from`, `to`, or `subject`:
 
-```from```: String. Filter on the email address of the receiver.
-```to```: String. Filter on the email address of the sender.
-```subject```: String. Filter on the subject of the email.
-```includeBody```: boolean. Set to true to fetch decoded email bodies.
-```includeAttachments```: boolean. Set to true to fetch the base64-encoded email attachments.
-```before```: Date. Filter messages received before the specified date.
-```after```: Date. Filter messages received after the specified date.
+```from```: String. Filter on the email address of the receiver.<br />
+```to```: String. Filter on the email address of the sender.<br />
+```subject```: String. Filter on the subject of the email.<br />
+```includeBody```: boolean. Set to true to fetch decoded email bodies.<br />
+```includeAttachments```: boolean. Set to true to fetch the base64-encoded email attachments.<br />
+```before```: Date. Filter messages received before the specified date.<br />
+```after```: Date. Filter messages received after the specified date.<br />
 ```label```: String. The default label is 'INBOX', but can be changed to 'SPAM', 'TRASH' or a custom label. For a full list of built-in labels, see https://developers.google.com/gmail/api/guides/labels?hl=en
 
 ---
