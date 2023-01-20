@@ -15,7 +15,8 @@
       "strictNullChecks": true,
       "moduleResolution": "Node",
       "types": [
-        "node"
+        "node",
+        "@wdio/globals/types"
       ]
     },
     "include": [

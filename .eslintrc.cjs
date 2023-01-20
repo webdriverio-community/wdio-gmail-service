@@ -15,6 +15,7 @@ module.exports = {
         semi: ['error', 'never'],
         quotes: ['error', 'single'],
         indent: [2, 4],
-        'import/extensions': ['error', 'ignorePackages']
+        'import/extensions': ['error', 'ignorePackages'],
+        '@typescript-eslint/no-explicit-any': 0
     }
 }

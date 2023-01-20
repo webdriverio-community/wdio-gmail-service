@@ -5,7 +5,7 @@ A WebdriverIO plugin to fetch e-mails from Google Mail. Wraps [Gmail Tester](htt
 
 ### Gmail Authentication
 
-You'll need to follow the instructions at [Gmail Tester](https://github.com/levz0r/gmail-tester) to create the `credentials.json` (the OAuth2 Authentication file) and `token.json` (the OAuth2 token). 
+You'll need to follow the instructions at [Gmail Tester](https://github.com/levz0r/gmail-tester) to create the `credentials.json` (the OAuth2 Authentication file) and `token.json` (the OAuth2 token).
 
 ### Configuration
 
@@ -15,7 +15,7 @@ Add the service by adding `gmail` to the service list, e.g.:
 // wdio.conf.js
 import path from 'path'
 
-export.config = {
+export const config = {
     // ...
     services: [['gmail', {
         credentialsJsonPath: path.join(process.cwd(), './credentials.json'),
@@ -29,22 +29,22 @@ export.config = {
 
 ## Service Options
 
-### credentialsJsonPath  
-Path to credentials JSON file.
+### credentialsJsonPath
+Absolute path to a credentials JSON file.
 
 Type: `string`
 
 Required: `true`
 
 ### tokenJsonPath
-Path to token JSON file.
+Absolute path to a token JSON file.
 
 Type: `string`
 
 Required: `true`
 
 ### intervalSec
-Interval between gmail inbox checks.
+The interval between Gmail inbox checks.
 
 Type: `number`
 
@@ -64,6 +64,8 @@ Required: `false`
 
 ## Writing tests
 
+In your WebdriverIO test, you can now check if an email was received.
+
 ```js
 describe('Example', () => {
     it('Should check email', () => {
@@ -74,13 +76,15 @@ describe('Example', () => {
 })
 ```
 
-## checkInbox parameters. Require at least one of from, to, or subject
+## `checkInbox` parameters
 
-```from```: String. Filter on the email address of the receiver.   
-```to```: String. Filter on the email address of the sender.   
-```subject```: String. Filter on the subject of the email.   
-```includeBody```: boolean. Set to true to fetch decoded email bodies.   
-```includeAttachments```: boolean. Set to true to fetch the base64-encoded email attachments.   
-```before```: Date. Filter messages received before the specified date.   
-```after```: Date. Filter messages received after the specified date.   
-```label```: String. The default label is 'INBOX', but can be changed to 'SPAM', 'TRASH' or a custom label. For a full list of built-in labels, see https://developers.google.com/gmail/api/guides/labels?hl=en   
+The command parameters require at least one of `from`, `to`, or `subject`:
+
+```from```: String. Filter on the email address of the receiver.
+```to```: String. Filter on the email address of the sender.
+```subject```: String. Filter on the subject of the email.
+```includeBody```: boolean. Set to true to fetch decoded email bodies.
+```includeAttachments```: boolean. Set to true to fetch the base64-encoded email attachments.
+```before```: Date. Filter messages received before the specified date.
+```after```: Date. Filter messages received after the specified date.
+```label```: String. The default label is 'INBOX', but can be changed to 'SPAM', 'TRASH' or a custom label. For a full list of built-in labels, see https://developers.google.com/gmail/api/guides/labels?hl=en
