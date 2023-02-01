@@ -1,0 +1,10 @@
+src
+tests
+.github
+.editorconfig
+.eslintignore
+.eslintrc.cjs
+.nvmrc
+/*.ts
+/*.json
+*.tgz
