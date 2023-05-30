@@ -38,7 +38,8 @@
     "compile": "tsc --build tsconfig.json",
     "copy": "cp src/cjs/package.json build/cjs",
     "test:eslint": "eslint src tests",
-    "test:unit": "vitest"
+    "test:unit": "vitest",
+    "watch": "npm run compile -- --watch"
   },
   "dependencies": {
     "@wdio/globals": "^8.3.2",

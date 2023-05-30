@@ -1,4 +1,5 @@
 exports.default = class CJSGmailService {
+    private isCJS = true
     private instance?: any
 
     constructor(options: never) {
@@ -9,6 +10,6 @@ exports.default = class CJSGmailService {
 
     async before (...args: never[]) {
         const instance = await this.instance
-        return instance.onPrepare(...args)
+        return instance.before(...args)
     }
 }
