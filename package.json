@@ -56,6 +56,6 @@
     "release-it": "^15.6.0",
     "rimraf": "^5.0.0",
     "typescript": "^5.0.2",
-    "vitest": "^0.32.0"
+    "vitest": "^0.33.0"
   }
 }
