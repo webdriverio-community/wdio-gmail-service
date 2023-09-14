@@ -99,14 +99,45 @@ describe('Example', () => {
 
 The command parameters require at least one of `from`, `to`, or `subject`:
 
-```from```: String. Filter on the email address of the receiver.<br />
-```to```: String. Filter on the email address of the sender.<br />
-```subject```: String. Filter on the subject of the email.<br />
-```includeBody```: boolean. Set to true to fetch decoded email bodies.<br />
-```includeAttachments```: boolean. Set to true to fetch the base64-encoded email attachments.<br />
-```before```: Date. Filter messages received before the specified date.<br />
-```after```: Date. Filter messages received after the specified date.<br />
-```label```: String. The default label is 'INBOX', but can be changed to 'SPAM', 'TRASH' or a custom label. For a full list of built-in labels, see https://developers.google.com/gmail/api/guides/labels?hl=en
+### `from`
+Filter on the email address of the receiver.
+
+Type: `String`
+
+### `to`
+Filter on the email address of the sender.
+
+Type: `String`
+
+### `subject`
+Filter on the subject of the email.
+
+Type: `String`
+
+### `includeBody`
+Set to true to fetch decoded email bodies.
+
+Type: `boolean`
+
+### `includeAttachments`
+Set to true to fetch the base64-encoded email attachments.
+
+Type: `boolean`
+
+### `before`
+Filter messages received before the specified date.
+
+Type: `Date`
+
+### `after`
+Filter messages received after the specified date.
+
+Type: `Date`
+
+### `label`
+The default label is 'INBOX', but can be changed to 'SPAM', 'TRASH' or a custom label. For a full list of built-in labels, see https://developers.google.com/gmail/api/guides/labels?hl=en
+
+Type: `String`
 
 ---
 
