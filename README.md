@@ -1,4 +1,4 @@
-# WebdriverIO Gmail Service
+# WebdriverIO Gmail Service [![Test](https://github.com/webdriverio-community/wdio-gmail-service/actions/workflows/test.yml/badge.svg)](https://github.com/webdriverio-community/wdio-gmail-service/actions/workflows/test.yml)
 
 A WebdriverIO plugin to fetch e-mails from Google Mail using [Gmail Tester](https://github.com/levz0r/gmail-tester).
 
