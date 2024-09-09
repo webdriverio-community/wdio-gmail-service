@@ -43,7 +43,7 @@
   },
   "dependencies": {
     "@wdio/globals": "9.0.9",
-    "@wdio/types": "9.0.4",
+    "@wdio/types": "9.0.8",
     "gmail-tester": "^1.3.8"
   },
   "devDependencies": {
