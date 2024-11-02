@@ -20,8 +20,9 @@ export default defineConfig({
                 '**/*.test.ts',
                 'vitest.config.ts',
                 '.eslintrc.cjs',
-                'src/cjs'
+                'src/cjs',
             ],
+            include: ['src/**/*.ts'],
             thresholds: {
                 lines: 100,
                 functions: 100,
