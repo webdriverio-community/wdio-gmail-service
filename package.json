@@ -32,12 +32,12 @@
     ]
   },
   "scripts": {
-    "test": "run-s test:*",
     "build": "run-s clean compile copy",
     "clean": "rimraf ./build",
     "compile": "tsc --build tsconfig.json",
     "copy": "cp src/cjs/package.json build/cjs",
-    "test:eslint": "eslint src tests",
+    "test": "run-s test:*",
+    "test:lint": "eslint src tests",
     "test:unit": "vitest --run",
     "watch": "npm run compile -- --watch"
   },
@@ -53,6 +53,7 @@
     "@vitest/coverage-v8": "^2.1.4",
     "eslint": "^9.14.0",
     "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-unicorn": "^56.0.0",
     "npm-run-all2": "^7.0.1",
     "release-it": "^17.10.0",
     "rimraf": "^6.0.1",

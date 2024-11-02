@@ -1,10 +1,11 @@
 import { test, expect, vi } from 'vitest'
+// eslint-disable-next-line camelcase
 import { check_inbox } from 'gmail-tester'
 
 import GmailService from '../src/index.js'
 
 vi.mock('gmail-tester', () => ({
-    check_inbox: vi.fn().mockResolvedValue([{ some: 'email '}])
+    check_inbox: vi.fn().mockResolvedValue([{ some: 'email' }])
 }))
 
 test('registers checkInbox command', () => {

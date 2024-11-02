@@ -1,7 +1,8 @@
+// eslint-disable-next-line camelcase
 import { check_inbox } from 'gmail-tester'
 import type { Services } from '@wdio/types'
 
-import { CheckInboxOptions, WdioGmailServiceOptions } from './types.js'
+import type { CheckInboxOptions, WdioGmailServiceOptions } from './types.js'
 
 export default class GmailService implements Services.ServiceInstance {
     private _credentialsJsonPath: string
@@ -32,8 +33,6 @@ export default class GmailService implements Services.ServiceInstance {
             throw new Error('Service option "tokenJsonPath" not set, but required')
         }
 
-        const wait_time_sec = this._intervalSec
-        const max_wait_time_sec = this._timeoutSec
         return await check_inbox(
             this._credentialsJsonPath,
             this._tokenJsonPath,
@@ -46,8 +45,8 @@ export default class GmailService implements Services.ServiceInstance {
                 after,
                 include_attachments: includeAttachments,
                 label,
-                wait_time_sec,
-                max_wait_time_sec
+                wait_time_sec: this._intervalSec,
+                max_wait_time_sec: this._timeoutSec
             }
         )
     }

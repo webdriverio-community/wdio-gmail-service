@@ -1,5 +1,3 @@
-
-
 export interface CheckInboxOptions {
     includeBody?: boolean;
     from?: string;

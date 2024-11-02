@@ -1,5 +1,4 @@
-import { vi, test, expect} from 'vitest'
-// eslint-disable-next-line @typescript-eslint/no-var-requires, import/extensions
+import { vi, test, expect } from 'vitest'
 const Service = require('../../')
 
 vi.mock('../../src/service.js', () => class {
