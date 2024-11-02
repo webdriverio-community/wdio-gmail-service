@@ -5,10 +5,30 @@ updates:
   schedule:
     interval: weekly
   open-pull-requests-limit: 10
-  ignore:
-    # following Eslint package require manual update to v9
-    - dependency-name: "eslint"
-    - dependency-name: "@typescript-eslint/eslint-plugin"
-    - dependency-name: "@typescript-eslint/parser"
-    # Node.js updates require changes to .nvmrc
-    - dependency-name: "@types/node"
+
+  groups:
+    patch-deps-updates-main:
+      update-types:
+        - "patch"
+    minor-deps-updates-main:
+      update-types:
+        - "minor"
+    major-deps-updates-main:
+      update-types:
+        - "major"
+- package-ecosystem: github-actions
+  directory: "/"
+  schedule:
+    interval: weekly
+    time: "11:00"
+  open-pull-requests-limit: 10
+  groups:
+    patch-deps-updates:
+      update-types:
+        - "patch"
+    minor-deps-updates:
+      update-types:
+        - "minor"
+    major-deps-updates:
+      update-types:
+        - "major"
