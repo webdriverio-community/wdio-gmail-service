@@ -9,7 +9,7 @@ The easiest way is to keep `wdio-gmail-service` as a `devDependency` in your pac
 ```json
 {
   "devDependencies": {
-    "wdio-gmail-service": "^1.0.0"
+    "wdio-gmail-service": "^2.0.0"
   }
 }
 ```
