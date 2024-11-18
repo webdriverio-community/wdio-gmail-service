@@ -40,7 +40,7 @@
     "compile": "tsc --build tsconfig.json",
     "copy": "cp src/cjs/package.json build/cjs",
     "test": "run-s test:*",
-    "test:lint": "eslint src tests",
+    "test:lint": "eslint .",
     "test:unit": "vitest --run",
     "watch": "npm run compile -- --watch"
   },
@@ -51,12 +51,9 @@
   },
   "devDependencies": {
     "@types/node": "^20.14.11",
-    "@typescript-eslint/eslint-plugin": "^8.12.2",
-    "@typescript-eslint/parser": "^8.12.2",
     "@vitest/coverage-v8": "^2.1.4",
+    "@wdio/eslint": "^0.0.3",
     "eslint": "^9.14.0",
-    "eslint-plugin-import": "^2.31.0",
-    "eslint-plugin-unicorn": "^56.0.0",
     "npm-run-all2": "^7.0.1",
     "release-it": "^17.10.0",
     "rimraf": "^6.0.1",

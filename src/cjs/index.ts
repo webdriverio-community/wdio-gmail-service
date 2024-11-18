@@ -1,5 +1,6 @@
 exports.default = class CJSGmailService {
     private isCJS = true
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     private instance?: any
 
     constructor(options: never) {
@@ -10,6 +11,6 @@ exports.default = class CJSGmailService {
 
     async before (...args: never[]) {
         const instance = await this.instance
-        return instance.before(...args)
+        return instance?.before(...args)
     }
 }
