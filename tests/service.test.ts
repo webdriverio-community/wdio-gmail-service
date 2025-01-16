@@ -20,7 +20,7 @@ test('registers checkInbox command', () => {
 test('throws if required options not set', async () => {
     const service = new GmailService({} as any)
     await expect(() => service['_checkInbox']({ from: 'foo' } as any)).rejects.toThrow(/not set, but required/)
-    service['_credentialsJsonPath'] = 'foo'
+    service['_credentials'] = 'foo'
     await expect(() => service['_checkInbox']({ from: 'foo' } as any)).rejects.toThrow(/not set, but required/)
 })
 
@@ -33,8 +33,8 @@ test('throws if from, to or subject is not set', async () => {
 
 test('throws if from, to or subject is not set', async () => {
     const service = new GmailService({
-        credentialsJsonPath: 'foo',
-        tokenJsonPath: 'bar'
+        credentials: 'foo',
+        token: 'bar'
     } as any)
 
     await service['_checkInbox']({ from: 'foo' })

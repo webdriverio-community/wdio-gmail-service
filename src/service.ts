@@ -1,17 +1,18 @@
 // eslint-disable-next-line camelcase
 import { check_inbox } from 'gmail-tester'
+import type { Credentials } from 'gmail-tester'
 import type { Services } from '@wdio/types'
 
 import type { CheckInboxOptions, WdioGmailServiceOptions } from './types.js'
 
 export default class GmailService implements Services.ServiceInstance {
-    private _credentialsJsonPath: string
-    private _tokenJsonPath: string
+    private _credentials: string | Credentials
+    private _token: string | Record<string, unknown>
     private _intervalSec: number
     private _timeoutSec: number
     constructor (serviceOptions: WdioGmailServiceOptions) {
-        this._credentialsJsonPath = serviceOptions.credentialsJsonPath
-        this._tokenJsonPath = serviceOptions.tokenJsonPath
+        this._credentials = serviceOptions.credentials
+        this._token = serviceOptions.token
         this._intervalSec = serviceOptions.intervalSec ?? 10
         this._timeoutSec = serviceOptions.timeoutSec ?? 60
     }
@@ -25,17 +26,17 @@ export default class GmailService implements Services.ServiceInstance {
             throw new Error('At least one of `from`, `to` or `subject` need to be provided to checkInbox')
         }
 
-        if (typeof this._credentialsJsonPath !== 'string') {
-            throw new Error('Service option "credentialsJsonPath" not set, but required')
+        if (!this._credentials) {
+            throw new Error('Service option "credentials" not set, but required')
         }
 
-        if (typeof this._tokenJsonPath !== 'string') {
-            throw new Error('Service option "tokenJsonPath" not set, but required')
+        if (!this._token) {
+            throw new Error('Service option "token" not set, but required')
         }
 
         return await check_inbox(
-            this._credentialsJsonPath,
-            this._tokenJsonPath,
+            this._credentials,
+            this._token,
             {
                 from,
                 to,

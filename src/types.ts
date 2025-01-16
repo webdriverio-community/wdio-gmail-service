@@ -1,3 +1,5 @@
+import type { Credentials } from 'gmail-tester'
+
 export interface CheckInboxOptions {
     includeBody?: boolean;
     from?: string;
@@ -10,8 +12,8 @@ export interface CheckInboxOptions {
   }
 
 export interface WdioGmailServiceOptions {
-    credentialsJsonPath: string;
-    tokenJsonPath: string;
+    credentials: string | Credentials;
+    token: string | Record<string, unknown>;
     intervalSec?: number;
     timeoutSec?: number;
   }
