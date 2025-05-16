@@ -37,8 +37,8 @@ import path from 'path'
 export const config = {
     // ...
     services: [['gmail', {
-        credentialsJsonPath: path.join(process.cwd(), './credentials.json'),
-        tokenJsonPath: join(process.cwd(), './token.json'),
+        credentials: path.join(process.cwd(), './credentials.json'),
+        token: join(process.cwd(), './token.json'),
         intervalSec: 10,
         timeoutSec: 60
     }]]
@@ -48,17 +48,17 @@ export const config = {
 
 ## Service Options
 
-### credentialsJsonPath
+### credentials
 Absolute path to a credentials JSON file.
 
-Type: `string`
+Type: `string | Credentials`
 
 Required: `true`
 
-### tokenJsonPath
+### token
 Absolute path to a token JSON file.
 
-Type: `string`
+Type: `string | Record<string, unknown>`
 
 Required: `true`
 
