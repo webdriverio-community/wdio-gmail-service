@@ -1,5 +1,10 @@
 # WebdriverIO Gmail Service [![Test](https://github.com/webdriverio-community/wdio-gmail-service/actions/workflows/test.yml/badge.svg)](https://github.com/webdriverio-community/wdio-gmail-service/actions/workflows/test.yml)
 
+> [!IMPORTANT]
+> **This repository does not support WebdriverIO v10.** It stays in maintenance mode for WebdriverIO v9 only.
+>
+> It gets no new features. Only critical fixes for WebdriverIO v9 are possible.
+
 A WebdriverIO plugin to fetch e-mails from Google Mail using [Gmail Tester](https://github.com/levz0r/gmail-tester).
 
 ## Installation
